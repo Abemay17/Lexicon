@@ -17,7 +17,15 @@
     <main>
         <div class="word-entry">
             <div id="word-container">
-                <h2><button class="btn"><i class="fa-solid fa-volume-high"></i></button> Tenacious</h2>
+                <h2>
+                    <button class="btn" onclick="document.getElementById('audio-tenacious').play()">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </button> 
+                    Tenacious
+                </h2>
+                <audio id="audio-tenacious">
+                    <source src="Tenacious.mp3" type="audio/mpeg">
+                </audio>
             </div>
             <h3>(adj.) Persistent or determined</h3>
             <p>(Abraham's bold and tenacious demeanor as a 
