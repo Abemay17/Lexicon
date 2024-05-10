@@ -18,8 +18,8 @@
         <div class="word-entry">
             <div id="word-container">
                 <h2>
-                    <button class="btn" onclick="document.getElementById('audio-tenacious').play()">
-                        <i class="fa-solid fa-volume-high"></i>
+                    <button class="btn" onclick="startRecognition('audio-tenacious')">
+                        <i class="fa-solid fa-microphone"></i>
                     </button> 
                     Tenacious
                 </h2>
@@ -28,10 +28,9 @@
                 </audio>
             </div>
             <h3>(adj.) Persistent or determined</h3>
-            <p>(Abraham's bold and tenacious demeanor as a 
-            student suggests that he is ready for great success in his career.)</p>
+            <p>(Abraham's bold and tenacious demeanor as a student suggests that he is ready for great success in his career.)</p>
         </div>
-
+        
         <div class="word-entry">
             <div id="word-container">
                 <h2><button class="btn"><i class="fa-solid fa-volume-high"></i></button> Fervent</h2>
@@ -79,7 +78,27 @@
             <h3>(v.) To insert or intervene between things or people.</h3>
             <p>(He interposed himeself between the arguing sibilings.)</p>
         </div>
-
+        <script>
+            // Check if the browser supports the Web Speech API
+            if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+                const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        
+                // Add event listener for when speech recognition results are available
+                recognition.onresult = function(event) {
+                    const transcript = event.results[0][0].transcript;
+                    // Display the transcribed speech in a text box or alert
+                    alert('You said: ' + transcript);
+                };
+        
+                // Function to start speech recognition
+                function startRecognition() {
+                    recognition.start();
+                }
+            } else {
+                // Browser doesn't support speech recognition
+                alert('Sorry, your browser does not support speech recognition.');
+            }
+        </script>
     </main>
     <footer>
         <p>&copy; 2024 Abraham</p>
