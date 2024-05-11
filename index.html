@@ -33,7 +33,12 @@
         
         <div class="word-entry">
             <div id="word-container">
-                <h2><button class="btn"><i class="fa-solid fa-volume-high"></i></button> Fervent</h2>
+                <h2>
+                    <button class="btn" onclick="startRecognition()">
+                        <i class="fa-solid fa-microphone"></i>
+                    </button> 
+                    Fervent
+                </h2>
             </div>
             <h3>(adj.) Showing great enthusiasm or intensity</h3>
             <p>(Her fervent passion for music was evident in every note she played.)</p>
@@ -41,7 +46,11 @@
 
         <div class="word-entry">
             <div id="word-container">
-                <h2><button class="btn"><i class="fa-solid fa-volume-high"></i></button> Benevolent</h2>
+                <h2> <button class="btn" onclick="startRecognition()">
+                    <i class="fa-solid fa-microphone"></i>
+                </button>  
+                Benevolent
+                </h2>
             </div>
             <h3>(adj.) Kind and generous</h3>
             <p>(The benevolent millionaire donated a large sum of money to the local orphanage.)</p>
@@ -49,7 +58,10 @@
 
         <div class="word-entry">
             <div id="word-container">
-                <h2><button class="btn"><i class="fa-solid fa-volume-high"></i></button> Lexicon</h2>
+                <h2> <button class="btn" onclick="startRecognition()">
+                    <i class="fa-solid fa-microphone"></i>
+                </button>  Lexicon
+                </h2>
             </div>
             <h3>(noun) A dictionary or vocabulary of a language</h3>
             <p>(She consulted the lexicon to find the definition of the unfamiliar word.)</p>
@@ -57,7 +69,10 @@
         
         <div class="word-entry">
             <div id="word-container">
-                <h2><button class="btn"><i class="fa-solid fa-volume-high"></i></button> Tyro</h2>
+                <h2> <button class="btn" onclick="startRecognition()">
+                    <i class="fa-solid fa-microphone"></i>
+                </button>  Tyro
+                </h2>
             </div>
             <h3>(noun) A beginner or novice</h3>
             <p>(As a tyro in the art of cooking, she followed the recipe meticulously.)</p>
@@ -65,7 +80,10 @@
 
         <div class="word-entry">
             <div id="word-container">
-                <h2><button class="btn"><i class="fa-solid fa-volume-high"></i></button> Amalgamation</h2>
+                <h2> <button class="btn" onclick="startRecognition()">
+                    <i class="fa-solid fa-microphone"></i>
+                </button>  Amalgamation
+                </h2>
             </div>
             <h3>(noun) The action, process, or result of combining or uniting</h3>
             <p>(The amalgamation of different cultures has enriched our society.)</p>
@@ -73,32 +91,27 @@
 
         <div class="word-entry">
             <div id="word-container">
-                <h2><button class="btn"><i class="fa-solid fa-volume-high"></i></button> Interpose</h2>
+                <h2> <button class="btn" onclick="startRecognition()">
+                    <i class="fa-solid fa-microphone"></i>
+                </button>  Interpose
+                </h2>
             </div>
             <h3>(v.) To insert or intervene between things or people.</h3>
             <p>(He interposed himeself between the arguing sibilings.)</p>
         </div>
-        <script>
-            // Check if the browser supports the Web Speech API
-            if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
-                const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-        
-                // Add event listener for when speech recognition results are available
-                recognition.onresult = function(event) {
-                    const transcript = event.results[0][0].transcript;
-                    // Display the transcribed speech in a text box or alert
-                    alert('You said: ' + transcript);
-                };
-        
-                // Function to start speech recognition
-                function startRecognition() {
-                    recognition.start();
-                }
-            } else {
-                // Browser doesn't support speech recognition
-                alert('Sorry, your browser does not support speech recognition.');
-            }
-        </script>
+
+        <div class="word-entry">
+            <div id="word-container">
+                <h2> <button class="btn" onclick="startRecognition()">
+                    <i class="fa-solid fa-microphone"></i>
+                </button>  Fatuous
+                </h2>
+            </div>
+            <h3>(adj.) Silly, Foolish.</h3>
+            <p>(He makes so many fatuous remarks that it's impossible to take him seriously.)</p>
+        </div>
+
+        <script src="script.js"></script>
     </main>
     <footer>
         <p>&copy; 2024 Abraham</p>
