@@ -68,6 +68,16 @@ h3, p, h2{
   }
   
 
-  .btn:hover {
+.btn:hover {
     background-color: bisque;
   }
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.icon-button:hover {
+    background-color: bisque;
+}
