@@ -2,9 +2,13 @@
 if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
     // Create an array to hold recognition instances for each word
     const recognitions = [];
+    // Get all word entries
+    const wordEntries = document.querySelectorAll('.word-entry');
+    // Variable to track the current word index
+    let currentWordIndex = 0;
 
     // Iterate through each word entry on the page
-    document.querySelectorAll('.word-entry').forEach((entry, index) => {
+    wordEntries.forEach((entry, index) => {
         // Create a new SpeechRecognition object for each word
         const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
 
@@ -34,5 +38,24 @@ if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
         entry.querySelector('.btn').addEventListener('click', () => {
             recognitions[index].start();
         });
+    });
+
+    // Function to scroll to the next word
+    function scrollToNextWord() {
+        currentWordIndex = (currentWordIndex + 1) % wordEntries.length;
+        const nextWordEntry = wordEntries[currentWordIndex];
+        const offset = -3000; // Adjust this value as needed to align properly
+        const elementPosition = nextWordEntry.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition + offset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+
+    // Add event listener to the next word button
+    document.querySelectorAll('#next-word-button').forEach(button => {
+        button.addEventListener('click', scrollToNextWord);
     });
 }

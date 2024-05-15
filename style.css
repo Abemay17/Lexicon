@@ -82,6 +82,17 @@ h3, p, h2{
     background-color: bisque;
 }
 
+#next-word-button{
+    border: #f0f0f0;
+    padding: 11px 16px;
+    font-size: 39px;
+}
+#next-word-button:hover{
+    border: #f0f0f0;
+    padding: 11px 16px;
+    font-size: 39px;
+}
+
 
 ::-webkit-scrollbar {
     width: 12px; 
