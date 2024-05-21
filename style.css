@@ -41,6 +41,9 @@ main {
     text-align: center;
     margin-bottom: 70%;
     margin-top: 40%;
+    border: 10px solid #D19869;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 
