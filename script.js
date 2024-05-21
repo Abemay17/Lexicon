@@ -71,7 +71,7 @@ if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
     function scrollToNextWord() {
         currentWordIndex = (currentWordIndex + 1) % wordEntries.length;
         const nextWordEntry = wordEntries[currentWordIndex];
-        const offset = -3000; // Adjust this value as needed to align properly
+        const offset = -100; // Adjust this value as needed to align properly
         const elementPosition = nextWordEntry.getBoundingClientRect().top + window.scrollY;
         const offsetPosition = elementPosition + offset;
 

@@ -40,10 +40,16 @@ main {
     justify-content: center;
     text-align: center;
     margin-bottom: 70%;
-    margin-top: 40%;
+    margin-top: 10%;
     border: 10px solid #D19869;
+    background-color: #D19869;
     padding: 10px;
     border-radius: 10px;
+    transition: transform 0.5s;
+}
+
+.word-entry:hover{
+    transform: translateY(-10px);
 }
 
 
@@ -68,6 +74,7 @@ h3, p, h2{
     padding: 11px 16px; 
     font-size: 39px; 
     cursor: pointer; 
+    border-radius: 50px;
   }
   
 
@@ -79,6 +86,7 @@ h3, p, h2{
     background: none;
     border: none;
     cursor: pointer;
+    border-radius: 50px;
 }
 
 .icon-button:hover {
@@ -89,10 +97,11 @@ h3, p, h2{
     border: #f0f0f0;
     padding: 11px 16px;
     font-size: 39px;
+    border-radius: 50px;
 }
 #next-word-button:hover{
     background-color: bisque;
-    border-radius: 15%;
+    border-radius: 50px;
 }
 
 
