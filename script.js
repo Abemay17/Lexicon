@@ -89,3 +89,7 @@ if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
     // Add event listener to the reset button
     resetButton.addEventListener('click', resetProgressBar);
 }
+
+    function saveWord(word) {
+    alert(`Saved ${word} to your favorites!`);
+}

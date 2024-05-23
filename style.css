@@ -16,7 +16,6 @@ header {
     color: #333;
     padding: 20px;
     text-align: center;
-    
 }
 
 main {
@@ -52,7 +51,6 @@ main {
     transform: translateY(-10px);
 }
 
-
 footer{
     background-color: #007bff;
     color: #fff;
@@ -67,7 +65,6 @@ h3, p, h2{
     text-align: center;
 }
 
-
 .btn {
     border: none; 
     color: #333; 
@@ -75,12 +72,11 @@ h3, p, h2{
     font-size: 39px; 
     cursor: pointer; 
     border-radius: 50px;
-  }
-  
+}
 
 .btn:hover {
     background-color: bisque;
-  }
+}
 
 .icon-button {
     background: none;
@@ -99,11 +95,31 @@ h3, p, h2{
     font-size: 39px;
     border-radius: 50px;
 }
+
 #next-word-button:hover{
     background-color: bisque;
     border-radius: 50px;
 }
 
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.bookmark-button {
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.bookmark-button:hover {
+    color: #007bff;
+}
 
 ::-webkit-scrollbar {
     width: 12px; 
@@ -124,15 +140,14 @@ h3, p, h2{
     background-color: #555; 
 }
 
-#progress-container{
+#progress-container {
     position: fixed;
-    top: 20px; /* Adjust as needed */
-    right: 20px; /* Adjust as needed */
-    z-index: 1000; /* Ensure it stays above other elements */
-    background-color: white; /* Optional: background color */
-    padding: 10px; /* Optional: padding around the progress bar */
-    border: 1px solid #ccc; /* Optional: border for visual separation */
-    border-radius: 5px; /* Optional: rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: shadow for a floating effect */
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-
