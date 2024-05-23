@@ -40,8 +40,7 @@ main {
     text-align: center;
     margin-bottom: 70%;
     margin-top: 10%;
-    border: 10px solid #D19869;
-    background-color: #D19869;
+    border: 10px solid #c9aa88;
     padding: 10px;
     border-radius: 10px;
     transition: transform 0.5s;
@@ -150,4 +149,12 @@ h3, p, h2{
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.like-button{
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333; 
 }
