@@ -18,6 +18,18 @@ header {
     text-align: center;
 }
 
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#search-bar {
+    padding: 8px;
+    font-size: 16px;
+    width: 200px;
+}
+
 main {
     margin: 20px auto;
     max-width: 800px;
@@ -40,7 +52,6 @@ main {
     text-align: center;
     margin-bottom: 70%;
     margin-top: 10%;
-    border: 10px solid #c9aa88;
     padding: 10px;
     border-radius: 10px;
     transition: transform 0.5s;
@@ -74,7 +85,7 @@ h3, p, h2{
 }
 
 .btn:hover {
-    background-color: bisque;
+    color: #007bff;
 }
 
 .icon-button {
@@ -85,7 +96,7 @@ h3, p, h2{
 }
 
 .icon-button:hover {
-    background-color: bisque;
+    color: #007bff;
 }
 
 #next-word-button{
@@ -96,8 +107,7 @@ h3, p, h2{
 }
 
 #next-word-button:hover{
-    background-color: bisque;
-    border-radius: 50px;
+    color: #007bff;
 }
 
 .action-buttons {
@@ -108,7 +118,8 @@ h3, p, h2{
     margin-top: 20px;
 }
 
-.bookmark-button {
+.bookmark-button,
+.like-button {
     border: none;
     background: none;
     font-size: 24px;
@@ -116,7 +127,8 @@ h3, p, h2{
     color: #333;
 }
 
-.bookmark-button:hover {
+.bookmark-button:hover,
+.like-button:hover {
     color: #007bff;
 }
 
@@ -149,12 +161,4 @@ h3, p, h2{
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.like-button{
-    border: none;
-    background: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #333; 
 }

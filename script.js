@@ -119,3 +119,21 @@ document.addEventListener('DOMContentLoaded', function() {
         resetButton.addEventListener('click', resetProgressBar);
     }
 });
+
+function searchWord() {
+    const searchTerm = document.getElementById('search-bar').value.toLowerCase();
+    const wordEntries = document.querySelectorAll('.word-entry');
+    let found = false;
+
+    wordEntries.forEach(entry => {
+        const word = entry.querySelector('h2').innerText.toLowerCase();
+        if (word.includes(searchTerm)) {
+            entry.scrollIntoView({ behavior: 'smooth' });
+            found = true;
+        }
+    });
+
+    if (!found) {
+        alert('No searches found');
+    }
+}
