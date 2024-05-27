@@ -137,3 +137,23 @@ function searchWord() {
         alert('No searches found');
     }
 }
+
+
+let likedWords = [];
+
+function likeWord(word) {
+    if (!likedWords.includes(word)) {
+        likedWords.push(word);
+    }
+}
+
+function showLikedWords() {
+    const dropdownContent = document.getElementById('liked-words-dropdown');
+    dropdownContent.innerHTML = '';
+
+    likedWords.forEach(word => {
+        const listItem = document.createElement('div');
+        listItem.textContent = word;
+        dropdownContent.appendChild(listItem);
+    });
+}
