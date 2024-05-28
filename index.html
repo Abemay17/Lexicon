@@ -21,6 +21,7 @@
         </div>
     </header>
     <main>
+
         <!-- Progress bar container -->
         <div id="progress-container">
             <progress id="progress-bar" value="0" max="100"></progress>
@@ -28,10 +29,28 @@
             <button id="reset-button"><i class="fa-solid fa-rotate-right"></i></button>
         </div>
 
-        <button class="bookmark-button" onclick="bookmarkWord('Word')">Bookmark</button>
-        <button class="like-button" onclick="showLikedWords()">Liked</button>
-    <div id="liked-words-dropdown" class="dropdown-content">
-    </div>
+
+        <!-- Add Word Button -->
+        <button id="add-word-button" onclick="openAddWordModal()">Add Word</button>
+        <!-- Add Word Modal -->
+        <div id="add-word-modal" class="modal">
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Word</h2>
+            <form id="add-word-form">
+                <label for="word">Word:</label>
+                <input type="text" id="word" name="word" required>
+                <label for="pronunciation">Pronunciation:</label>
+                <input type="text" id="pronunciation" name="pronunciation">
+                <label for="definition">Definition:</label>
+                <textarea id="definition" name="definition" required></textarea>
+                <label for="sentence">Sentence:</label>
+                <textarea id="sentence" name="sentence"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            </div>
+        </div>
+        
         
         <div class="word-entry">
             <div id="word-container">

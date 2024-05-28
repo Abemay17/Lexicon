@@ -138,22 +138,46 @@ function searchWord() {
     }
 }
 
-
-let likedWords = [];
-
-function likeWord(word) {
-    if (!likedWords.includes(word)) {
-        likedWords.push(word);
-    }
+function openAddWordModal() {
+    var modal = document.getElementById("add-word-modal");
+    modal.style.display = "block";
 }
 
-function showLikedWords() {
-    const dropdownContent = document.getElementById('liked-words-dropdown');
-    dropdownContent.innerHTML = '';
-
-    likedWords.forEach(word => {
-        const listItem = document.createElement('div');
-        listItem.textContent = word;
-        dropdownContent.appendChild(listItem);
-    });
+// Function to show the add word form/modal
+function showAddWordForm() {
+    // Show your modal or form here
 }
+
+// Function to handle form submission
+function submitWordForm() {
+    // Get input values
+    const word = document.getElementById('word-input').value;
+    const pronunciation = document.getElementById('pronunciation-input').value;
+    const definition = document.getElementById('definition-input').value;
+    const sentence = document.getElementById('sentence-input').value;
+
+    // Create HTML for the new word entry
+    const newWordEntryHTML = `
+        <div class="word-entry">
+            <div id="word-container">
+                <h2>${word}</h2>
+            </div>
+            <h3>${pronunciation}</h3>
+            <h3>${definition}</h3>
+            <p>${sentence}</p>
+        </div>
+    `;
+
+    // Append the new word entry to the main element
+    const mainElement = document.querySelector('main');
+    mainElement.insertAdjacentHTML('beforeend', newWordEntryHTML);
+
+    // Close the form/modal if needed
+    // ...
+}
+
+// Event listener for the "Add Word" button
+document.getElementById('add-word-button').addEventListener('click', showAddWordForm);
+
+// Event listener for the "Submit" button in the form/modal
+document.getElementById('submit-button').addEventListener('click', submitWordForm);
