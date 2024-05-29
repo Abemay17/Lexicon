@@ -138,46 +138,86 @@ function searchWord() {
     }
 }
 
-function openAddWordModal() {
-    var modal = document.getElementById("add-word-modal");
-    modal.style.display = "block";
-}
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to open the modal
+    function openAddWordModal() {
+        document.getElementById('add-word-modal').style.display = 'block';
+    }
 
-// Function to show the add word form/modal
-function showAddWordForm() {
-    // Show your modal or form here
-}
+    // Function to close the modal
+    function closeAddWordModal() {
+        document.getElementById('add-word-modal').style.display = 'none';
+    }
 
-// Function to handle form submission
-function submitWordForm() {
-    // Get input values
-    const word = document.getElementById('word-input').value;
-    const pronunciation = document.getElementById('pronunciation-input').value;
-    const definition = document.getElementById('definition-input').value;
-    const sentence = document.getElementById('sentence-input').value;
+    // Attach the open modal function to the button
+    document.getElementById('add-word-button').onclick = openAddWordModal;
 
-    // Create HTML for the new word entry
-    const newWordEntryHTML = `
-        <div class="word-entry">
+    // Function to handle the form submission
+    document.getElementById('add-word-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Get form values
+        const word = document.getElementById('word').value;
+        const pronunciation = document.getElementById('pronunciation').value;
+        const definition = document.getElementById('definition').value;
+        const sentence = document.getElementById('sentence').value;
+
+        // Create a new word element with the same structure and classes
+        const wordEntry = document.createElement('div');
+        wordEntry.className = 'word-entry';
+        wordEntry.innerHTML = `
             <div id="word-container">
-                <h2>${word}</h2>
+                <h2>
+                    <button class="btn" onclick="startRecognition()">
+                        <i class="fa-solid fa-microphone"></i>
+                    </button> ${word}
+                </h2>
             </div>
-            <h3>${pronunciation}</h3>
-            <h3>${definition}</h3>
-            <p>${sentence}</p>
-        </div>
-    `;
+            <audio id="audio-${word.toLowerCase()}" src="${word.toLowerCase()}.mp3"></audio>
+            <h3>
+                <button class="icon-button" onclick="document.getElementById('audio-${word.toLowerCase()}').play()">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button> ${pronunciation}
+            </h3>
+            <h3>(adj.) ${definition}</h3>
+            <p>(${sentence})</p>
+            <button id="next-word-button"><i class="fa-solid fa-angle-down"></i></button>
+            <div class="action-buttons">
+                <button class="bookmark-button"><i class="fa-regular fa-bookmark"></i></button>
+                <button class="like-button" onclick="likeWord('${word}')"><i class="fa-regular fa-heart"></i></button>
+            </div>
+        `;
 
-    // Append the new word entry to the main element
-    const mainElement = document.querySelector('main');
-    mainElement.insertAdjacentHTML('beforeend', newWordEntryHTML);
+        // Append the new word to the words container
+        const wordsContainer = document.getElementById('words-container');
+        if (wordsContainer) {
+            wordsContainer.appendChild(wordEntry);
+        } else {
+            console.error('words-container element not found');
+        }
 
-    // Close the form/modal if needed
-    // ...
+        // Clear the form
+        document.getElementById('add-word-form').reset();
+
+        // Close the modal
+        closeAddWordModal();
+    });
+
+    // Close the modal when the user clicks outside of it
+    window.onclick = function(event) {
+        const modal = document.getElementById('add-word-modal');
+        if (event.target === modal) {
+            closeAddWordModal();
+        }
+    };
+});
+
+// Function to start recognition (Replace with actual implementation)
+function startRecognition() {
+    console.log('Start recognition');
 }
 
-// Event listener for the "Add Word" button
-document.getElementById('add-word-button').addEventListener('click', showAddWordForm);
-
-// Event listener for the "Submit" button in the form/modal
-document.getElementById('submit-button').addEventListener('click', submitWordForm);
+// Function to perform the like action (Replace with actual implementation)
+function likeWord(word) {
+    console.log(`Liked word: ${word}`);
+}
