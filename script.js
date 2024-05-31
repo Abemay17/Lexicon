@@ -217,7 +217,41 @@ function startRecognition() {
     console.log('Start recognition');
 }
 
-// Function to perform the like action (Replace with actual implementation)
+
+// scripts.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Attach event listeners to all like and bookmark buttons
+    const likeButtons = document.querySelectorAll('.like-button');
+    const bookmarkButtons = document.querySelectorAll('.bookmark-button');
+
+    likeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const word = button.closest('.word-entry').getAttribute('data-word');
+            addToList('liked-words-list', word);
+        });
+    });
+
+    bookmarkButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const word = button.closest('.word-entry').getAttribute('data-word');
+            addToList('bookmarked-words-list', word);
+        });
+    });
+
+    function addToList(listId, word) {
+        const list = document.getElementById(listId);
+        const listItem = document.createElement('li');
+        listItem.textContent = word;
+        list.appendChild(listItem);
+    }
+});
+
 function likeWord(word) {
-    console.log(`Liked word: ${word}`);
+    addToList('liked-words-list', word);
 }
+
+function bookmarkWord(word) {
+    addToList('bookmarked-words-list', word);
+}
+

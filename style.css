@@ -291,4 +291,56 @@ h3, p, h2{
     background-color: #0056b3;
 }
 
-  
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #0f0f0f0f;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+    width: 80%;
+    padding: 20px;
+}
+
+.word-entry {
+    margin-bottom: 20px;
+}
+
+.word-entry h2 {
+    display: flex;
+    align-items: center;
+}
+
+.word-entry .btn {
+    margin-right: 10px;
+}
+
+.word-entry .action-buttons {
+    margin-top: 10px;
+}
+
+.word-entry .action-buttons button {
+    margin-right: 5px;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    background: #0f0f0f0f;
+    margin-bottom: 5px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
